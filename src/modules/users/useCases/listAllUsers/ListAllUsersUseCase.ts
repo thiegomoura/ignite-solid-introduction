@@ -1,15 +1,17 @@
 import { User } from "../../model/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
-interface IRequest {
-  user_id: string;
-}
+// interface IRequest {
+//   user_id: string;
+// }
 
 class ListAllUsersUseCase {
   constructor(private usersRepository: IUsersRepository) {}
+  // { user_id }: IRequest
+  execute(): User[] {
+    const users = this.usersRepository.list();
 
-  execute({ user_id }: IRequest): User[] {
-    // Complete aqui
+    return users;
   }
 }
 
